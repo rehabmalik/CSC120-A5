@@ -2,7 +2,7 @@ public class Passenger {
     String name;
 
     /**
-     * Creates an instance of the train class and initiliases the attributes
+     *Creates a new passenger and initializes it's attributes
      *@param name String
     */
     public Passenger(String name){
@@ -10,16 +10,16 @@ public class Passenger {
     }
 
     /**
-     * Allows access to the passenger's name
-     * @return name
+     *Allows access to the passenger's name
+     *@return name
     */
     public String getName(){
         return name;
     }
     
     /**
-     * Adds passenger to a given car
-     * @param c Car
+     *Adds passenger to a given car
+     *@param c Car
     */
     public void boardCar(Car c){
         try {
@@ -30,8 +30,8 @@ public class Passenger {
     }
 
     /**
-     * Removes passemger from given car
-     * @param c Car
+     *Removes passemger from given car
+     *@param c Car
     */
     public void getOffCar(Car c) {
         try {
