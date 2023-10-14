@@ -10,8 +10,7 @@ public class Train {
      *@param fuelCapacity double
      *@param nCars int
      *@param passengerCapacity int
-     */
-
+    */
     public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity){
         this.cars = new ArrayList<>(nCars);
         this.engine = new Engine(fuelCapacity, fuelType);
@@ -23,8 +22,7 @@ public class Train {
     /**
      * Gives access to the engine linked to this train
      *@return the engine linked to this train
-     */
-
+    */
     public Engine getEngine(){
         return this.engine;
     } 
@@ -32,8 +30,7 @@ public class Train {
     /** 
      *Searches the array for the car stored at the requested index
      *@return the car stored at index i in the array list
-     */
-
+    */
     public Car getCar(int i){
         return this.cars.get(i);
     }
@@ -41,8 +38,7 @@ public class Train {
     /**
      * Totals the capacities of all cars in the train
      *@return maxcapacity
-     */
-
+    */
     public int getMaxCapacity(){
         int maxcapacity = 0;
         for (Car car : cars) {
@@ -54,8 +50,7 @@ public class Train {
     /**
      * Totals the remaining seats in the cars of the train
      *@return seatsremaining
-     */
-
+    */
     public int seatsRemaining(){
         int seatsremaining = 0;
         for (Car car : cars) {
@@ -66,8 +61,7 @@ public class Train {
 
     /**
      * Prints all the passengers aboard the train organized by car.
-     */
-
+    */
     public void printManifest(){
         for (Car car : cars) {
             System.out.println("Car " + (this.cars.indexOf(car)+ 1));
@@ -75,4 +69,3 @@ public class Train {
         }
     }
 }
-
