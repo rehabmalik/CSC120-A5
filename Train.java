@@ -5,7 +5,7 @@ public class Train {
     private ArrayList<Car> cars;
    
     /**
-     * creates an instance of the train class and initiliases the attributes
+     *Creates a train and initializes its attributes
      *@param fuelType fuelType
      *@param fuelCapacity double
      *@param nCars int
@@ -20,7 +20,7 @@ public class Train {
     }
 
     /**
-     * Gives access to the engine linked to this train
+     *Gives access to the engine linked to this train
      *@return the engine linked to this train
     */
     public Engine getEngine(){
@@ -36,7 +36,7 @@ public class Train {
     }
 
     /**
-     * Totals the capacities of all cars in the train
+     *Totals the capacities of all cars in the train
      *@return maxcapacity
     */
     public int getMaxCapacity(){
@@ -48,7 +48,7 @@ public class Train {
     }
 
     /**
-     * Totals the remaining seats in the cars of the train
+     *Totals the remaining seats in the cars of the train
      *@return seatsremaining
     */
     public int seatsRemaining(){
@@ -60,7 +60,7 @@ public class Train {
     }
 
     /**
-     * Prints all the passengers aboard the train organized by car.
+     *Prints all the passengers aboard the train organized by car.
     */
     public void printManifest(){
         for (Car car : cars) {
