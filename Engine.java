@@ -1,30 +1,30 @@
 public class Engine {
     /* The current fuel level of the engine */
-   private double currentfuellevel;
+   private double currentFuelLevel;
    /* The maximum fuel level of the engine */
-   private double maxfuellevel;
+   private double maxFuelLevel;
    /* The fuel type of the engine, one of: STEAM, INTERNAL_COMBUSTION, ELECTRIC, OTHER */
-   private FuelType fueltype;
+   private FuelType fuelType;
 
    /**
      * Creates a new engine and initializes its attributes
-     * @param currentfuellevel
-     * @param fueltype
+     * @param currentFuelLevel
+     * @param fuelType
      */
    
-    public Engine (FuelType fueltype, double currentfuellevel){
-     this.fueltype = fueltype;
-     this.currentfuellevel = currentfuellevel;
-     this.maxfuellevel = 100.0;
+    public Engine (FuelType fuelType, double currentFuelLevel){
+     this.fuelType = fuelType;
+     this.currentFuelLevel = currentFuelLevel;
+     this.maxFuelLevel = 100.0;
     }
     
     /**
      * Gives the current fuel level of the engine
-     * @return currentfuellevel
+     * @return currentFuelLevel
      */
     
      public double getCurrentFuelLevel() {
-        return currentfuellevel;
+        return currentFuelLevel;
     }
 
     /**
@@ -33,7 +33,7 @@ public class Engine {
      */
     
     public double getMaxFuelLevel() {
-        return maxfuellevel;
+        return maxFuelLevel;
     }
 
     /**
@@ -42,7 +42,7 @@ public class Engine {
      */
     
     public FuelType getFuelType() {
-        return fueltype;
+        return fuelType;
     }
 
     /**
@@ -50,7 +50,7 @@ public class Engine {
      */
     
     public void refuel() {
-        currentfuellevel = maxfuellevel;
+        currentFuelLevel = maxFuelLevel;
     }
 
    /**
@@ -61,15 +61,15 @@ public class Engine {
     public void go(double traveltime) {
         double fuelconsumptionrate = 4.16;
         double fuelconsumed;
-       currentfuellevel = getCurrentFuelLevel();
+       currentFuelLevel = getCurrentFuelLevel();
        fuelconsumed = traveltime*fuelconsumptionrate;
-       if (currentfuellevel < fuelconsumed){
-        throw new RuntimeException("There is not enough fuel to travel further. Fuel remaining: " + currentfuellevel);
+       if (currentFuelLevel < fuelconsumed){
+        throw new RuntimeException("There is not enough fuel to travel further. Fuel remaining: " + currentFuelLevel);
        }
-       currentfuellevel = currentfuellevel - fuelconsumed;
-       if (currentfuellevel <= 0) {
-        throw new RuntimeException("There is not enough fuel to travel. Fuel remaining: " + currentfuellevel);
+       currentFuelLevel = currentFuelLevel - fuelconsumed;
+       if (currentFuelLevel <= 0) {
+        throw new RuntimeException("There is not enough fuel to travel. Fuel remaining: " + currentFuelLevel);
        }
-       System.out.println("Fuel remaining: " + currentfuellevel);
+       System.out.println("Fuel remaining: " + currentFuelLevel);
     }
 }
