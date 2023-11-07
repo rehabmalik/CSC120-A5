@@ -1,6 +1,6 @@
 public class Engine {
-   double currentfuellevel;
-   double maxfuellevel;
+   private double currentfuellevel;
+   private double maxfuellevel;
    private FuelType fueltype;
 
    /**
