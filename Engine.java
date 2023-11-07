@@ -1,6 +1,9 @@
 public class Engine {
+    /* The current fuel level of the engine */
    private double currentfuellevel;
+   /* The maximum fuel level of the engine */
    private double maxfuellevel;
+   /* The fuel type of the engine, one of: STEAM, INTERNAL_COMBUSTION, ELECTRIC, OTHER */
    private FuelType fueltype;
 
    /**
@@ -9,10 +12,10 @@ public class Engine {
      * @param fueltype
      */
    
-    public Engine (double currentfuellevel, FuelType fueltype){
+    public Engine (FuelType fueltype, double currentfuellevel){
+     this.fueltype = fueltype;
      this.currentfuellevel = currentfuellevel;
      this.maxfuellevel = 100.0;
-     this.fueltype = fueltype;
     }
     
     /**
@@ -34,6 +37,15 @@ public class Engine {
     }
 
     /**
+     * Gives the fuel type used in the engine
+     * @return fueltype
+     */
+    
+    public FuelType getFuelType() {
+        return fueltype;
+    }
+
+    /**
      * Refuels the engine to its maximum level
      */
     
@@ -43,19 +55,19 @@ public class Engine {
 
    /**
       * Decreases the fuel level according to the time travelled and prints remaining fuel
-      * The train can travel for 24 hours before it needs to be refuelled again. 
       * @param traveltime
      */
 
     public void go(double traveltime) {
+        double fuelconsumptionrate = 4.16;
         double fuelconsumed;
        currentfuellevel = getCurrentFuelLevel();
-       fuelconsumed = traveltime*(100/24);
+       fuelconsumed = traveltime*fuelconsumptionrate;
        if (currentfuellevel < fuelconsumed){
         throw new RuntimeException("There is not enough fuel to travel further. Fuel remaining: " + currentfuellevel);
        }
        currentfuellevel = currentfuellevel - fuelconsumed;
-       if (currentfuellevel == 0) {
+       if (currentfuellevel <= 0) {
         throw new RuntimeException("There is not enough fuel to travel. Fuel remaining: " + currentfuellevel);
        }
        System.out.println("Fuel remaining: " + currentfuellevel);
