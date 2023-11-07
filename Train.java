@@ -1,19 +1,22 @@
 import java.util.ArrayList;
 
 public class Train {
+    /* The engine belonging to the train */
     private final Engine engine;
+    /* A list of cars attached to the train */
     private ArrayList<Car> cars;
    
     /**
-     * Creates a train and initializes its attributes
-     * @param fuelType fuelType
-     * @param fuelCapacity double
-     * @param nCars int
-     * @param passengerCapacity int
-    */
+     * creates an instance of the train class and initiliases the attributes
+     *@param fuelType fuelType
+     *@param fuelCapacity double
+     *@param nCars int
+     *@param passengerCapacity int
+     */
+
     public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity){
         this.cars = new ArrayList<>(nCars);
-        this.engine = new Engine(fuelCapacity, fuelType);
+        this.engine = new Engine(fuelType, fuelCapacity);
         for (int i = 1; i <= nCars; i ++){
             this.cars.add(new Car(passengerCapacity));
         }
@@ -21,24 +24,27 @@ public class Train {
 
     /**
      * Gives access to the engine linked to this train
-     * @return the engine linked to this train
-    */
+     *@return the engine linked to this train
+     */
+    
     public Engine getEngine(){
         return this.engine;
     } 
 
     /** 
-     * Searches the array for the car stored at the requested index
-     * @return the car stored at index i in the array list
-    */
+     *Searches the array for the car stored at the requested index
+     *@return the car stored at index i in the array list
+     */
+    
     public Car getCar(int i){
         return this.cars.get(i);
     }
 
     /**
      * Totals the capacities of all cars in the train
-     * @return maxcapacity
-    */
+     *@return maxcapacity
+     */
+    
     public int getMaxCapacity(){
         int maxcapacity = 0;
         for (Car car : cars) {
@@ -49,8 +55,9 @@ public class Train {
 
     /**
      * Totals the remaining seats in the cars of the train
-     * @return seatsremaining
-    */
+     *@return seatsremaining
+     */
+    
     public int seatsRemaining(){
         int seatsremaining = 0;
         for (Car car : cars) {
@@ -61,7 +68,8 @@ public class Train {
 
     /**
      * Prints all the passengers aboard the train organized by car.
-    */
+     */
+    
     public void printManifest(){
         for (Car car : cars) {
             System.out.println("Car " + (this.cars.indexOf(car)+ 1));
