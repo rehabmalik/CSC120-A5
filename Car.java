@@ -1,8 +1,11 @@
 import java.util.ArrayList;
 
 public class Car {
+    /* List of all passengers on the car */
     private ArrayList<Passenger> passengers;
+    /* Maximum capacity of each car*/
     private int maxcapacity;
+    /* Number of seats that are taken */
     private int seatstaken;
     
     /**
